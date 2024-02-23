@@ -1,0 +1,40 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    int n, q;
+    cin >> n >> q;
+
+    // Create a vector of vectors to represent the nested arrays
+    vector<vector<int>> arr(n);
+
+    // Populate the nested arrays
+    for (int i = 0; i < n; i++) {
+        int k;
+        cin >> k;
+
+        // Create a vector for each nested array
+        vector<int> nestedArray(k);
+
+        // Populate the elements of the nested array
+        for (int j = 0; j < k; j++) {
+            cin >> nestedArray[j];
+        }
+
+        // Add the nested array to the main array
+        arr[i] = nestedArray;
+    }
+
+    // Process and print the queries
+    for (int i = 0; i < q; i++) {
+        int x, y;
+        cin >> x >> y;
+
+        // Print the value of element at arr[x][y]
+        cout << arr[x][y] << endl;
+    }
+
+    return 0;
+}
