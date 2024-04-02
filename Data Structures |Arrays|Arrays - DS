@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    int arr[n]={};
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    int size=sizeof(arr)/sizeof(arr[0]);
+    int start=0;
+    int end=size-1;
+    while(start<end){
+        int rev=arr[start];
+        arr[start]=arr[end];
+        arr[end]=rev;
+        start++;
+        end--;
+    }
+    for (int i=0; i<size; i++) {
+    cout<<arr[i]<<" ";
+    }
+    
+}
